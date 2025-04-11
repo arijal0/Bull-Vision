@@ -35,8 +35,7 @@ if company_name:
                 **{info['Name']}**  
                 *{info['Sector']} | {info['Industry']}*  
                 **CEO:** {info['CEO']}  
-                **Country:** {info['Country']}  
-                **Founded:** {info['Founded']}  
+                **Country:** {info['Country']}    
                 **Website:** [{info['Website']}]({info['Website']})  
                 <br>
                 {info['Description'][:500]}...

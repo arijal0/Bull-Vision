@@ -222,7 +222,6 @@ def get_company_info(ticker_symbol):
         "Industry": info.get("industry", "N/A"),
         "CEO": info.get("companyOfficers", [{}])[0].get("name", "N/A") if info.get("companyOfficers") else "N/A",
         "Country": info.get("country", "N/A"),
-        "Founded": info.get("startDate", "N/A"),
         "Website": info.get("website", "N/A"),
         "Description": info.get("longBusinessSummary", "Description not available.")
     }
