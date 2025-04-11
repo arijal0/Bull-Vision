@@ -211,3 +211,18 @@ def calculate_prediction_metrics(df, predicted_prices):
         "MAE": round(mae, 2),
         "MAPE": round(mape, 2)
     }
+
+def get_company_info(ticker_symbol):
+    ticker = yf.Ticker(ticker_symbol)
+    info = ticker.info
+    
+    return {
+        "Name": info.get("longName", "N/A"),
+        "Sector": info.get("sector", "N/A"),
+        "Industry": info.get("industry", "N/A"),
+        "CEO": info.get("companyOfficers", [{}])[0].get("name", "N/A") if info.get("companyOfficers") else "N/A",
+        "Country": info.get("country", "N/A"),
+        "Founded": info.get("startDate", "N/A"),
+        "Website": info.get("website", "N/A"),
+        "Description": info.get("longBusinessSummary", "Description not available.")
+    }
